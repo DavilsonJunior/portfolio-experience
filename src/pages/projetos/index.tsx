@@ -20,7 +20,7 @@ interface ProjetoProps {
 export default function Projetos({ projetos }: ProjetoProps) {
   return (
     <ProjetosContainer>
-      <Head>
+      {/* <Head>
         <title>Projetos | Meu portfólio</title>
         <meta
           name="description"
@@ -34,7 +34,7 @@ export default function Projetos({ projetos }: ProjetoProps) {
           property="og:description"
           content="Sou um desenvolvedor Front-end e aqui apresento alguns projetos desenvolvidos por mim!"
         />
-      </Head>
+      </Head> */}
 
       <Header />
       <main className="container">
@@ -50,7 +50,7 @@ export default function Projetos({ projetos }: ProjetoProps) {
         <ProjetoItem
           title="Event"
           type="Projeto para agendamento de eventos"
-          slug="teste"
+          slug="event"
           imgUrl="https://user-images.githubusercontent.com/35976070/95802681-893cdf00-0cd4-11eb-9e64-7415607a7a88.png"
         />
         <ProjetoItem
