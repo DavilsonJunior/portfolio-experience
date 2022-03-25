@@ -99,4 +99,4 @@ Acesse <http://localhost:3000> para ver o resultado.
 
 # :closed_book: Licença
 
-Este projeto está sob a licença [MIT](./LICENSE).
+Este projeto está sob a licença [MIT](./LICENCE).
