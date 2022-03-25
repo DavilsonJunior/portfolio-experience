@@ -1,0 +1,23 @@
+{
+  "id": "cb1092d5-a321-472d-8589-6157033cc9d9",
+  "uid": "dolor-est-quod",
+  "type": "portfolio-davilsonjunior",
+  "data": {
+    "title": "target impactful channels",
+    "description": "engineer revolutionary platforms",
+    "type": "architect cutting-edge infomediaries",
+    "link": {
+      "link_type": "Web",
+      "url": "http://twitter.com"
+    },
+    "thumbnail": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
+    }
+  }
+}

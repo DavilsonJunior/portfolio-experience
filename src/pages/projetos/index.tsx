@@ -1,10 +1,13 @@
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
+import Prismic from '@prismicio/client';
 import Header from '../../components/Header';
 
 import ProjetoItem from '../../components/ProjectItem';
 import { ProjetosContainer } from '../../styles/ProjetosStyles';
+import { getPrismicClient } from '../../services/prismic';
 
-interface IProjeto {
+interface IProject {
   slug: string;
   title: string;
   type: string;
@@ -13,11 +16,11 @@ interface IProjeto {
   thumbnail: string;
 }
 
-interface ProjetoProps {
-  projetos: IProjeto[];
+interface ProjectProps {
+  projects: IProject[];
 }
 
-export default function Projetos({ projetos }: ProjetoProps) {
+export default function Projetos({ projects }: ProjectProps) {
   return (
     <ProjetosContainer>
       {/* <Head>
@@ -38,42 +41,41 @@ export default function Projetos({ projetos }: ProjetoProps) {
 
       <Header />
       <main className="container">
-        {/* projetos.map(projeto => (
+        {projects.map(project => (
           <ProjetoItem
-            key={projeto.slug}
-            title={projeto.title}
-            type={projeto.type}
-            slug={projeto.slug}
-            imgUrl={projeto.thumbnail}
+            key={project.slug}
+            title={project.title}
+            type={project.type}
+            slug={project.slug}
+            imgUrl={project.thumbnail}
           />
-        )) */}
-        <ProjetoItem
-          title="Event"
-          type="Projeto para agendamento de eventos"
-          slug="event"
-          imgUrl="https://user-images.githubusercontent.com/35976070/95802681-893cdf00-0cd4-11eb-9e64-7415607a7a88.png"
-        />
-        <ProjetoItem
-          title="GetBook"
-          type="Faz busca de livros no banco de dados de uma bibliotecas"
-          slug="teste"
-          imgUrl="https://user-images.githubusercontent.com/35976070/158717254-89bf99bd-ff25-4c0c-8c65-b68900233a5f.png"
-        />
-
-        <ProjetoItem
-          title="Rocketshoes"
-          type="Projeto desenvolvido no curso da Rocketseat"
-          slug="teste"
-          imgUrl="https://user-images.githubusercontent.com/35976070/85335359-44860180-b4b3-11ea-9a45-bd63df9f0204.jpg"
-        />
-
-        <ProjetoItem
-          title="Event"
-          type="Projeto para agendamento de eventos"
-          slug="teste"
-          imgUrl="https://user-images.githubusercontent.com/35976070/95802681-893cdf00-0cd4-11eb-9e64-7415607a7a88.png"
-        />
+        ))}
       </main>
     </ProjetosContainer>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient();
+
+  const projectResponse = await prismic.query(
+    [Prismic.Predicates.at('document.type', 'portfolio-davilsonjunior')],
+    { orderings: '[document.first_publication_date desc]' }
+  );
+
+  const projects = projectResponse.results.map(project => ({
+    slug: project.uid,
+    title: project.data.title,
+    type: project.data.type,
+    description: project.data.description,
+    link: project.data.link.url,
+    thumbnail: project.data.thumbnail.url
+  }));
+
+  return {
+    props: {
+      projects
+    },
+    revalidate: 86400
+  };
+};

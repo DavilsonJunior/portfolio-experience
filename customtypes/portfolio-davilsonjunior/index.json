@@ -1,0 +1,54 @@
+{
+  "id": "portfolio-davilsonjunior",
+  "label": "Projeto",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "Slug",
+          "placeholder": "API ID"
+        },
+        "type": "UID"
+      },
+      "title": {
+        "config": {
+          "label": "Titulo",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "description": {
+        "config": {
+          "label": "Descrição",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "type": {
+        "config": {
+          "label": "Tipo",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "link": {
+        "config": {
+          "label": "Projeto Online",
+          "placeholder": "",
+          "allowTargetBlank": false
+        },
+        "type": "Link"
+      },
+      "thumbnail": {
+        "config": {
+          "label": "Thumbnail",
+          "constraint": {},
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

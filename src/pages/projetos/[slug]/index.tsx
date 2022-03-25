@@ -1,14 +1,14 @@
 import Prismic from '@prismicio/client';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import BannerProjeto from '../../../components/BannerProject';
 import Header from '../../../components/Header';
-// import { getPrismicClient } from '../../../services/prismic';
 import { ProjetoContainer } from '../../../styles/ProjetoStyles';
 import LoadingScreen from '../../../components/LoadingScreen';
-// import LoadingScreen from '../../../components/LoadingScreen';
+import { getPrismicClient } from '../../../services/prismic';
 
-interface IProjeto {
+interface IProject {
   slug: string;
   title: string;
   type: string;
@@ -17,15 +17,16 @@ interface IProjeto {
   thumbnail: string;
 }
 
-interface ProjetoProps {
-  projeto: IProjeto;
+interface ProjectProps {
+  project: IProject;
 }
 
-export default function Projeto({ projeto }: ProjetoProps) {
-  // const router = useRouter();
-  // if (router.isFallback) {
-  //   return <LoadingScreen />;
-  // }
+export default function Projeto({ project }: ProjectProps) {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <LoadingScreen />;
+  }
 
   return (
     <ProjetoContainer>
@@ -47,25 +48,62 @@ export default function Projeto({ projeto }: ProjetoProps) {
       /> */}
 
       <BannerProjeto
-        title="Event"
-        type="Projeto para agendamento de eventos"
-        imgUrl="https://user-images.githubusercontent.com/35976070/95802681-893cdf00-0cd4-11eb-9e64-7415607a7a88.png"
+        title={project.title}
+        type={project.type}
+        imgUrl={project.thumbnail}
       />
 
       <main>
-        <p>
-          {/* projeto.description */}
-          Lorem Ipsum é simplesmente uma simulação de texto da indústria
-          tipográfica e de impressos, e vem sendo utilizado desde o século XVI,
-          quando um impressor desconhecido pegou uma bandeja de tipos e os
-          embaralhou para fazer um livro de modelos de tipos
-        </p>
+        <p>{project.description}</p>
         <button type="button">
-          <a href="https://github.com/DavilsonJunior/event-frontend">
-            Ver projeto online
-          </a>
+          <a href={project.link}>Ver projeto online</a>
         </button>
       </main>
     </ProjetoContainer>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const prismic = getPrismicClient();
+  const projects = await prismic.query([
+    Prismic.Predicates.at('document.type', 'portfolio-davilsonjunior')
+  ]);
+
+  const paths = projects.results.map(project => ({
+    params: {
+      slug: project.uid
+    }
+  }));
+
+  return {
+    paths,
+    fallback: true
+  };
+};
+
+export const getStaticProps: GetStaticProps = async context => {
+  const prismic = getPrismicClient();
+  const { slug } = context.params;
+
+  const response = await prismic.getByUID(
+    'portfolio-davilsonjunior',
+    String(slug),
+    {}
+  );
+
+  const project = {
+    slug: response.uid,
+    title: response.data.title,
+    type: response.data.type,
+    description: response.data.description,
+    link: response.data.link.url,
+    thumbnail: response.data.thumbnail.url
+  };
+
+  return {
+    props: {
+      project
+    },
+    revalidate: 86400
+  };
+};
