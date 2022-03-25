@@ -36,12 +36,12 @@
 ### Fotos
 
 <div>
-   <img src="https://user-images.githubusercontent.com/35976070/160137882-e88667c2-f1af-4688-a59a-bcdbbe99d8b3.png" width="450px">
-   <img src="https://user-images.githubusercontent.com/35976070/160137988-c53f6bab-164c-4434-9593-7dbc7fc90bbe.png" width="450px">
-   <img src="https://user-images.githubusercontent.com/35976070/160138067-26132b24-0d6a-41cb-90a1-05461bce1799.png" width="450px">
-   <img src="https://user-images.githubusercontent.com/35976070/160161429-a4554086-0082-4697-884b-cc0abb405f6b.png" width="450px">
-   <img src="https://user-images.githubusercontent.com/35976070/160161789-e5d42cc3-c020-49ff-8e8b-2470ba9baa1f.png" width="450px">
-   <img src="https://user-images.githubusercontent.com/35976070/160161585-ceb49ea4-6f32-4c02-a583-d8967eff8b8d.png" width="450px">
+   <img src="https://user-images.githubusercontent.com/35976070/160137882-e88667c2-f1af-4688-a59a-bcdbbe99d8b3.png" width="400px">
+   <img src="https://user-images.githubusercontent.com/35976070/160137988-c53f6bab-164c-4434-9593-7dbc7fc90bbe.png" width="400px">
+   <img src="https://user-images.githubusercontent.com/35976070/160138067-26132b24-0d6a-41cb-90a1-05461bce1799.png" width="400px">
+   <img src="https://user-images.githubusercontent.com/35976070/160161429-a4554086-0082-4697-884b-cc0abb405f6b.png" width="400px">
+   <img src="https://user-images.githubusercontent.com/35976070/160161789-e5d42cc3-c020-49ff-8e8b-2470ba9baa1f.png" width="400px">
+   <img src="https://user-images.githubusercontent.com/35976070/160161585-ceb49ea4-6f32-4c02-a583-d8967eff8b8d.png" width="400px">
 </div>
 
 # :eyes: Demo
