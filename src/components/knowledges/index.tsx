@@ -23,7 +23,7 @@ function Knowledges() {
       </section>
       <section>
         <button type="button">
-          <Link href="/github">
+          <Link href="https://github.com/DavilsonJunior">
             <a>Ver mais sobre</a>
           </Link>
         </button>

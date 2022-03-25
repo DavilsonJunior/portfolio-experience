@@ -29,33 +29,6 @@ export const Container = styled.header`
   }
 `;
 
-/* export const Menu = styled.div`
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  flex-direction: column;
-
-  padding: 0.2rem;
-
-  position: absolute;
-  top: 0.7rem;
-  right: 0.3rem;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  > span.item {
-    width: 2rem;
-    height: 0.25rem;
-    background: ${({ theme }) => theme.secondary};
-  }
-
-  > span.item + span {
-    margin-top: 0.5rem;
-  }
-`; */
-
 export const NavLinkContainer = styled.li<NavLinkProps>`
   a {
     text-transform: uppercase;

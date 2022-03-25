@@ -40,7 +40,7 @@ export default function Projetos({ projects }: ProjectProps) {
       </Head> */}
 
       <Header />
-      <main className="container">
+      <main className="container" data-aos="fade-up">
         {projects.map(project => (
           <ProjetoItem
             key={project.slug}

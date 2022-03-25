@@ -4,7 +4,7 @@ import pictureUser from '../../assets/profile.jpg';
 
 function HomeHero() {
   return (
-    <Container>
+    <Container data-aos="fade-up">
       <img src={pictureUser} alt="Foto do usuario" />
       <div>
         <TextContainer>
@@ -15,7 +15,7 @@ function HomeHero() {
           </h2>
         </TextContainer>
         <InfosContainer>
-          <CodeItem>
+          <CodeItem data-aos="zoom-in">
             <span className="comment">//Minha apresentação</span>
             <br />
             <span className="purple">Infos</span> {'\u007B'} {/* unicode */}
@@ -28,7 +28,7 @@ function HomeHero() {
             {'\u007D'}
           </CodeItem>
 
-          <CodeItem>
+          <CodeItem data-aos="zoom-in">
             <span className="purple">Cargo</span> {'\u007B'} {/* unicode */}
             <div>
               Função: <span className="blue">Desenvolvedor Front-end</span>

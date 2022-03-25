@@ -8,7 +8,7 @@ interface ExperienceItemProps {
 
 function ExperienceItem({ title, subtitle, description }: ExperienceItemProps) {
   return (
-    <ItemContainer>
+    <ItemContainer data-aos="fade-up">
       <div>
         <h1>{title}</h1>
         <h2>{subtitle}</h2>

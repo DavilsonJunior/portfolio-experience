@@ -53,7 +53,7 @@ export default function Projeto({ project }: ProjectProps) {
         imgUrl={project.thumbnail}
       />
 
-      <main>
+      <main data-aos="fade-up">
         <p>{project.description}</p>
         <button type="button">
           <a href={project.link}>Ver projeto online</a>

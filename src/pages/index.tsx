@@ -1,5 +1,9 @@
 import { GetStaticProps } from 'next';
 import Prismic from '@prismicio/client';
+import { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 import { HomeContainer } from '../styles/HomeStyles';
 
 import Header from '../components/Header';
@@ -24,6 +28,10 @@ interface HomeProps {
   projects: IProject[];
 }
 export default function Home({ projects }: HomeProps) {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
     <HomeContainer>
       <Header />
