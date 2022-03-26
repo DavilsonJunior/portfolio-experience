@@ -30,23 +30,17 @@ export default function Projeto({ project }: ProjectProps) {
 
   return (
     <ProjetoContainer>
-      {/* <Head>
-        <title> {projeto.title} Projeto | Meu portfólio</title>
-        <meta name="description" content={projeto.description} />
-        <meta property="og:image" content={projeto.thumbnail} />
-        <meta property="og:image:secure_url" content={projeto.thumbnail} />
-        <meta name="twitter:image" content={projeto.thumbnail} />
-        <meta name="twitter:image:src" content={projeto.thumbnail} />
-        <meta property="og:description" content={projeto.description} /> 
-  </Head> */}
+      <Head>
+        <title> {project.title} | Meu portfólio</title>
+        <meta name="description" content={project.description} />
+        <meta property="og:image" content={project.thumbnail} />
+        <meta property="og:image:secure_url" content={project.thumbnail} />
+        <meta name="twitter:image" content={project.thumbnail} />
+        <meta name="twitter:image:src" content={project.thumbnail} />
+        <meta property="og:description" content={project.description} />
+      </Head>
 
       <Header />
-      {/* <BannerProjeto
-        title={projeto.title}
-        type={projeto.type}
-        imgUrl={projeto.thumbnail}
-      /> */}
-
       <BannerProjeto
         title={project.title}
         type={project.type}

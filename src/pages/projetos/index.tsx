@@ -23,7 +23,7 @@ interface ProjectProps {
 export default function Projetos({ projects }: ProjectProps) {
   return (
     <ProjetosContainer>
-      {/* <Head>
+      <Head>
         <title>Projetos | Meu portfólio</title>
         <meta
           name="description"
@@ -37,7 +37,7 @@ export default function Projetos({ projects }: ProjectProps) {
           property="og:description"
           content="Sou um desenvolvedor Front-end e aqui apresento alguns projetos desenvolvidos por mim!"
         />
-      </Head> */}
+      </Head>
 
       <Header />
       <main className="container" data-aos="fade-up">

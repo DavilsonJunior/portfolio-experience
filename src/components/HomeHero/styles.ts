@@ -10,7 +10,6 @@ export const Container = styled.section`
 
   > img {
     width: 48rem;
-    height: 48rem;
     flex: 1;
     border: 1rem solid ${({ theme }) => theme.primary};
     border-radius: 24rem;
@@ -43,6 +42,9 @@ export const Container = styled.section`
     > div {
       width: 100%;
       // text-align: center;
+    }
+    > img {
+      width: 38rem;
     }
   }
 `;
