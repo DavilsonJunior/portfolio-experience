@@ -2,12 +2,21 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import sendgridTransport from 'nodemailer-sendgrid-transport';
 import nodemailer from 'nodemailer';
 
-const email = process.env.MAIL_ADDRESS;
+const email = 'revolvejr@gmail.com';
+
+// const transporter = nodemailer.createTransport(
+//   sendgridTransport({
+//     auth: {
+//       api_key: process.env.SENDGRID_API_KEY
+//     }
+//   })
+// );
 
 const transporter = nodemailer.createTransport(
   sendgridTransport({
     auth: {
-      api_key: process.env.SENDGRID_API_KEY
+      api_key:
+        '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'
     }
   })
 );

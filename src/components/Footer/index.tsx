@@ -35,7 +35,7 @@ function Footer() {
           <AiFillLinkedin
             onClick={() =>
               handleRedirect(
-                'https://www.linkedin.com/in/davilson-paulino-da-cunha-junior-23029315a/'
+                'https://www.linkedin.com/in/davilson-paulino-cunha-da-junior-23029315a/'
               )
             }
           />

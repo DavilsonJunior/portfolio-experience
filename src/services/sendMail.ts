@@ -13,7 +13,6 @@ export const sendContactMail = async (
 
   try {
     return await axios.post('/api/contact', data);
-    console.log('teste');
   } catch (error) {
     return error;
   }
