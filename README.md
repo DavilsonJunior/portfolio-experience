@@ -27,7 +27,7 @@
 
 # :pushpin: Conteúdo
 
-- [Demo](#eyes-demo)
+- [Site](#eyes-site)
 - [Tecnologias](#computer-tecnologias)
 - [Executando](#construction_worker-executando)
 - [Autores](#computer-autores)
@@ -44,9 +44,9 @@
    <img src="https://user-images.githubusercontent.com/35976070/160161585-ceb49ea4-6f32-4c02-a583-d8967eff8b8d.png" width="400px">
 </div>
 
-# :eyes: Demo
+# :eyes: Site
 
-👉 Demo: <https://portfolio-experience.vercel.app//>
+👉 Site: https://davilsonjunior.com.br/
 
 # :computer: Tecnologias
 
@@ -91,7 +91,7 @@ Acesse <http://localhost:3000> para ver o resultado.
         </sub>
        </a>
        <br />
-       <a href="https://www.linkedin.com/in/davilson-paulino-da-cunha-junior-23029315a/" title="Linkedin">@davilsonjunior</a>
+       <a href="https://www.linkedin.com/in/davilson-paulino-cunha-da-junior-23029315a/" title="Linkedin">@davilsonjunior</a>
        <br />
     </td>
   </tr>
