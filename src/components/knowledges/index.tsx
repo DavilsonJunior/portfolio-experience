@@ -1,5 +1,5 @@
 import { AiFillHtml5 } from 'react-icons/ai';
-import { SiTypescript } from 'react-icons/si';
+import { SiTypescript, SiJest } from 'react-icons/si';
 import { FaCss3Alt, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io5';
 import Link from 'next/link';
@@ -20,6 +20,7 @@ function Knowledges() {
         <KnowledgeItem title="Typescript" icon={<SiTypescript />} />
         <KnowledgeItem title="React" icon={<FaReact />} />
         <KnowledgeItem title="Javascript" icon={<IoLogoJavascript />} />
+        <KnowledgeItem title="Jest" icon={<SiJest />} />
       </section>
       <section>
         <button type="button">

@@ -31,7 +31,7 @@ function HomeHero() {
           <CodeItem data-aos="zoom-in">
             <span className="purple">Cargo</span> {'\u007B'} {/* unicode */}
             <div>
-              Função: <span className="blue">Desenvolvedor Front-end</span>
+              Função: <span className="blue">Desenvolvedor Full Stack</span>
             </div>
             {'\u007D'}
           </CodeItem>

@@ -14,12 +14,12 @@ function Experiences() {
           description="Março de 2021 até o momento"
         />
         <ExperienceItem
-          title="Desenvolvedor Fron-end"
+          title="Desenvolvedor Front-end"
           subtitle="Café e Pixel"
           description="Março de 2021 a Novembro de 2021"
         />
         <ExperienceItem
-          title="Desenvolvedor Fron-end"
+          title="Desenvolvedor Front-end"
           subtitle="DiagoNow"
           description="Janeiro de 2021 a abril de 2021"
         />
