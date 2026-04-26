@@ -68,10 +68,10 @@ export default function Home({ projects }: HomeProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const client = getPrismicClient();
 
-   const projectResponse = await client.get({
+  const projectResponse = await client.get({
     predicates: [
-      prismic.predicate.at('document.type', 'portfolio-davilsonjunior'),
-    ],
+      prismic.predicate.at('document.type', 'portfolio-davilsonjunior')
+    ]
   });
 
   const projects = projectResponse.results.map(project => ({

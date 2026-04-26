@@ -59,15 +59,11 @@ export default function Projetos({ projects }: ProjectProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const client = getPrismicClient();
 
- const projectResponse = await client.get({
-  predicates: [
-    prismic.predicate.at('document.type', 'portfolio-davilsonjunior'),
-  ],
-});
-
-  const data = await client.get();
-
-console.log('projectResponse:', projectResponse);
+  const projectResponse = await client.get({
+    predicates: [
+      prismic.predicate.at('document.type', 'portfolio-davilsonjunior')
+    ]
+  });
 
   const projects = projectResponse.results.map(project => ({
     slug: project.uid,

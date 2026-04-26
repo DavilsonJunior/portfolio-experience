@@ -34,7 +34,10 @@ function Experiences() {
           <span className="badge">CV</span>
 
           <h1>Meu Currículo</h1>
-          <p>Baixe meu currículo completo em PDF e conheça mais sobre minha trajetória.</p>
+          <p>
+            Baixe meu currículo completo em PDF e conheça mais sobre minha
+            trajetória.
+          </p>
 
           <a href="/curriculo.pdf" download>
             📄 Baixar Currículo

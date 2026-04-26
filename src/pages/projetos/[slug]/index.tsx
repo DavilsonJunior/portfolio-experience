@@ -58,13 +58,13 @@ export default function Projeto({ project }: ProjectProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
- const client = getPrismicClient();
+  const client = getPrismicClient();
 
- const projectResponse = await client.get({
-  predicates: [
-    prismic.predicate.at('document.type', 'portfolio-davilsonjunior'),
-  ],
-});
+  const projectResponse = await client.get({
+    predicates: [
+      prismic.predicate.at('document.type', 'portfolio-davilsonjunior')
+    ]
+  });
 
   const paths = projectResponse.results.map(project => ({
     params: {
@@ -79,10 +79,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async context => {
-  const prismic = getPrismicClient();
+  const client = getPrismicClient();
   const { slug } = context.params;
 
-  const response = await prismic.getByUID(
+  const response = await client.getByUID(
     'portfolio-davilsonjunior',
     String(slug)
   );

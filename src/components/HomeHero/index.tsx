@@ -1,5 +1,4 @@
 import { Container, TextContainer, InfosContainer, CodeItem } from './styles';
-import Image from 'next/image';
 
 import pictureUser from '../../assets/profile.png';
 
