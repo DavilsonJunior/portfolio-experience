@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
-import Prismic from '@prismicio/client';
+import * as prismic from '@prismicio/client';
+
 import Header from '../../components/Header';
 
 import ProjetoItem from '../../components/ProjectItem';
@@ -56,12 +57,17 @@ export default function Projetos({ projects }: ProjectProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const prismic = getPrismicClient();
+  const client = getPrismicClient();
 
-  const projectResponse = await prismic.query(
-    [Prismic.Predicates.at('document.type', 'portfolio-davilsonjunior')],
-    { orderings: '[document.first_publication_date desc]' }
-  );
+ const projectResponse = await client.get({
+  predicates: [
+    prismic.predicate.at('document.type', 'portfolio-davilsonjunior'),
+  ],
+});
+
+  const data = await client.get();
+
+console.log('projectResponse:', projectResponse);
 
   const projects = projectResponse.results.map(project => ({
     slug: project.uid,

@@ -1,4 +1,4 @@
-import Prismic from '@prismicio/client';
+import * as prismic from '@prismicio/client';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -58,12 +58,15 @@ export default function Projeto({ project }: ProjectProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const prismic = getPrismicClient();
-  const projects = await prismic.query([
-    Prismic.Predicates.at('document.type', 'portfolio-davilsonjunior')
-  ]);
+ const client = getPrismicClient();
 
-  const paths = projects.results.map(project => ({
+ const projectResponse = await client.get({
+  predicates: [
+    prismic.predicate.at('document.type', 'portfolio-davilsonjunior'),
+  ],
+});
+
+  const paths = projectResponse.results.map(project => ({
     params: {
       slug: project.uid
     }
@@ -81,8 +84,7 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const response = await prismic.getByUID(
     'portfolio-davilsonjunior',
-    String(slug),
-    {}
+    String(slug)
   );
 
   const project = {

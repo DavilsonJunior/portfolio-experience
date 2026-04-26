@@ -1,9 +1,9 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import Prismic from '@prismicio/client';
 import { useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import * as prismic from '@prismicio/client';
 
 import { HomeContainer } from '../styles/HomeStyles';
 
@@ -66,12 +66,13 @@ export default function Home({ projects }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const prismic = getPrismicClient();
+  const client = getPrismicClient();
 
-  const projectResponse = await prismic.query(
-    [Prismic.Predicates.at('document.type', 'portfolio-davilsonjunior')],
-    { orderings: '[document.first_publication_date desc]' }
-  );
+   const projectResponse = await client.get({
+    predicates: [
+      prismic.predicate.at('document.type', 'portfolio-davilsonjunior'),
+    ],
+  });
 
   const projects = projectResponse.results.map(project => ({
     slug: project.uid,

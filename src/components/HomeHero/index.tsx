@@ -1,11 +1,12 @@
 import { Container, TextContainer, InfosContainer, CodeItem } from './styles';
+import Image from 'next/image';
 
-import pictureUser from '../../assets/profile.jpg';
+import pictureUser from '../../assets/profile.png';
 
 function HomeHero() {
   return (
     <Container data-aos="fade-up">
-      <img src={pictureUser} alt="Foto do usuario" />
+      <img src={pictureUser.src} alt="Foto do usuario" />
       <div>
         <TextContainer>
           <h1>Olá</h1>
@@ -31,7 +32,7 @@ function HomeHero() {
           <CodeItem data-aos="zoom-in">
             <span className="purple">Cargo</span> {'\u007B'} {/* unicode */}
             <div>
-              Função: <span className="blue">Desenvolvedor Full Stack</span>
+              Função: <span className="blue">Engenheiro de Software</span>
             </div>
             {'\u007D'}
           </CodeItem>

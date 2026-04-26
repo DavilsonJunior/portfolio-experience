@@ -133,3 +133,86 @@ export const ItemContainer = styled.div`
     }
   }
 `;
+
+export const CurriculumCard = styled.div`
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+
+  > div {
+    position: relative;
+    max-width: 40rem;
+    width: 100%;
+    padding: 3rem;
+
+    background: ${({ theme }) => theme.gradient};
+    border: 2px dashed ${({ theme }) => theme.primary};
+    border-radius: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    transition: 0.4s;
+
+    &:hover {
+      transform: translateY(-8px);
+      filter: brightness(1.1);
+    }
+
+    h1 {
+      color: ${({ theme }) => theme.primary};
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: ${({ theme }) => theme.textLight};
+      margin-bottom: 2rem;
+      max-width: 30rem;
+    }
+
+    a {
+      padding: 1rem 2rem;
+      background: ${({ theme }) => theme.primary};
+      color: #000;
+      font-weight: bold;
+      border-radius: 0.8rem;
+      text-decoration: none;
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+      }
+    }
+  }
+
+  .badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    background: ${({ theme }) => theme.primary};
+    color: #000;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.4rem;
+    font-weight: bold;
+  }
+
+  @media (max-width: 700px) {
+    > div {
+      padding: 2rem;
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+`;
